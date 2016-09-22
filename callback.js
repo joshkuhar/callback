@@ -22,7 +22,7 @@ function getWords(saying, callback){
 
 
 getWords(phrase, printWords);
-
+//functions
 function onStart(number){
   console.log(number);
 }
@@ -36,6 +36,7 @@ function onEnd(number, max){
   }
 }
 
+//progress function that takes three callbacks
 function progress(max, onStart, onProgress, onEnd){
   var x = 0;
   while(x < max){
@@ -45,13 +46,18 @@ function progress(max, onStart, onProgress, onEnd){
     onEnd(x, max);
   }
 }
+//call to progess function
 progress(15, onStart, onProgress, onEnd);
 
+// Refactored code
+// 
+//function that takes a callback
 function onStart(number, callback){
   var x = number;
   console.log(x);
   callback(x);
 }
+//function that takes callback function that takes a callback function
 function progress(max, onStart){
   var x = 0;
   while(x < max){
