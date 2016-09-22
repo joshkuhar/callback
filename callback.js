@@ -46,3 +46,20 @@ function progress(max, onStart, onProgress, onEnd){
   }
 }
 progress(15, onStart, onProgress, onEnd);
+
+function onStart(number, callback){
+  var x = number;
+  console.log(x);
+  callback(x);
+}
+function progress(max, onStart){
+  var x = 0;
+  while(x < max){
+    x++;
+    onStart(x, function(x){
+      if (x % 5 === 0 && x !== 0)
+        console.log("I'm divisible by 5");
+    });
+  }
+}
+progress(10, onStart);
