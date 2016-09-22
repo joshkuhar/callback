@@ -1,27 +1,34 @@
-function wait(seconds, callback) {
-  setTimeout(function(){
-    callback(console.log("i'm the callback"));
-  }, seconds * 1000);
-}
+// function wait(seconds, callback) {
+//   setTimeout(function(){
+//     callback(console.log("i'm the callback"));
+//   }, seconds * 1000);
+// }
 
-wait(1, function(date) {
-  console.log('Console log inside anonymous callback:', date);
-});
+// wait(1, function(date) {
+//   console.log('Console log inside anonymous callback:', date);
+// });
 
-var phrase = "Hello, world";
+// var phrase = "Hello, world";
 
-function printWords(words){
-  console.log(words + ' again');
-}
+// function printWords(words){
+//   console.log(words + ' again');
+// }
 
-function getWords(saying, callback){
-  console.log(saying);
-  callback(saying);
-}
+// function getWords(saying, callback){
+//   console.log(saying);
+//   callback(saying);
+// }
+// getWords(phrase, printWords);
+
+// Instructions
+// Write a simple progress bar function in the callback style. Your function 
+// should take three callbacks, onStart, onProgress, and onEnd as arguments. 
+// When you call the function it should call the onStart callback, then loop 
+// from 1 to 100, using console.log to print each value. Every 10 items it 
+// counts it should call the onProgress callback, providing how far along it 
+// is as an argument. Finally it should call the onEnd callback.
 
 
-
-getWords(phrase, printWords);
 //functions
 function onStart(number){
   console.log(number);
@@ -53,9 +60,8 @@ progress(15, onStart, onProgress, onEnd);
 // 
 //function that takes a callback
 function onStart(number, callback){
-  var x = number;
-  console.log(x);
-  callback(x);
+  console.log(number);
+  callback(number);
 }
 //function that takes callback function that takes a callback function
 function progress(max, onStart){
